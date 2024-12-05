@@ -1,0 +1,29 @@
+{
+    "name": "multimatics-php-dev",
+    "service": "multimatics-php-devel",
+    "remoteUser": "vscode",
+    "dockerComposeFile": "../../docker-compose.php.devel.yaml",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-outside-of-docker": {}
+    },
+    "workspaceFolder": "/home/vscode/workspace",
+    "containerEnv": {
+        "TZ": "Asia/Jakarta"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "mikestead.dotenv",
+                "amiralizadeh9480.laravel-extra-intellisense",
+                "ryannaddy.laravel-artisan",
+                "onecentlin.laravel5-snippets",
+                "onecentlin.laravel-blade",
+                "ms-vscode.makefile-tools",
+                "eamodio.gitlens",
+                "redhat.vscode-yaml",
+                "yzhang.markdown-all-in-one"
+            ]
+        }
+    },
+    "postCreateCommand": "chown -R 1000:1000 /var/www/html 2>/dev/null || true"
+}

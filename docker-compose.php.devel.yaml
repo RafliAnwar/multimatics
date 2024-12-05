@@ -1,0 +1,28 @@
+services:
+  multimatics-php-devel:
+    container_name: multimatics-php-devel
+    build:
+      context: .
+      dockerfile: dockerfile.php.devel
+    volumes:
+      - .:/home/vscode/workspace
+    command: sleep infinity
+    networks:
+      - multimatics-devel-network
+
+  multimatics-mysql-laravel:
+    container_name: multimatics-mysql-laravel
+    image: mysql:8.2
+    restart: always
+    env_file: .env
+    ports:
+      - ${MYSQL_PORT:-3307}:${MYSQL_PORT:-3307}
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    networks:
+      - multimatics-devel-network
+
+networks:
+  multimatics-devel-network:
+    name: multimatics-devel-network
+    driver: bridge
