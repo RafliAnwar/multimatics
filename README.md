@@ -7,7 +7,7 @@ We assume you have docker and vscode installed on your machine. If not, please i
 First, clone the repository by running the following command in your terminal:
 
 ```bash
-git clone https://github.com/ruhyadi/multimatics
+git clone https://github.com/RafliAnwar/multimatics.git
 ```
 
 Then, navigate to the project directory:
